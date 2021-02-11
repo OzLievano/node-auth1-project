@@ -7,18 +7,18 @@ module.exports = {
     findById
 }
 
-async function find(){
-    return await db('users');
+ function find(){
+    return db('users').select("id","username").orderBy("id");
 }
 
-async function findBy(filter){
-    return await db('users').where(filter).orderBy("id");
+ function findBy(filter){
+    return db('users').where(filter).orderBy("id");
 }
 
-async function findById(id){
-    return await db('users').where({ id })
+ function findById(id){
+    return db('users').where({ id })
 }
 
-async function add(data){
-    return await db('users').insert(data)
+ function add(data){
+    return db('users').insert(data)
 }
