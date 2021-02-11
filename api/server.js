@@ -2,8 +2,8 @@ const express = require('express');
 
 const server = express();
 const session = require('express-session');
-const connectSessionStore = require('connect-session-knex')(session);
-const usersRouter = require('../api/users-router/');
+const KnexSessionStore = require('connect-session-knex')(session);
+const usersRouter = require('../api/users/users-router')
 const authRouter = require('../api/auth/auth-router');
 
 
