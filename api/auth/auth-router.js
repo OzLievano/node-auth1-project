@@ -31,7 +31,7 @@ router.post('/login', async(req,res)=>{
     try{
         const user = await Users.findBy({username}).first();
 
-        console.log(user);
+        console.log(user)
         if(user && bcrypt.compareSync(password,user.password)){
             req.session.user = user;
             res.status(200).json({message:"WELCOME TO THE THUNDERDOME"})
